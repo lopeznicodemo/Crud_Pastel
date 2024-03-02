@@ -8,9 +8,6 @@ CREATE table PASTEL(
     fecha_creacion date,
     fecha_vencimiento date
     );
-
-INSERT INTO PASTEL (id,nombre,descripcion, preparado_por,fecha_creacion, fecha_vencimiento) VALUES 
-(1,"p_fresa","sabor a fresa fresca","Daniel Orozco",'2024/2/29','2024/3/27');
 	
 create table INGREDIENTE(
     id int not null primary key,
@@ -20,6 +17,17 @@ create table INGREDIENTE(
     fecha_vencimiento date
     );
 
+create table pastel_ingrediente( 
+	id_pastel int, 	
+	id_ingrediente int, 
+	foreign key (id_pastel) references pastel(id), 
+	foreign key (id_ingrediente) references ingrediente(id)
+	);
 
-INSERT INTO PASTEL (id,nombre,descripcion, preparado_por,fecha_creacion, fecha_vencimiento) VALUES
-	(1,p_fresa,"sabor a fresa fresca","Daniel Orozco",10/1/2024,);
+INSERT INTO PASTEL (id,nombre,descripcion, preparado_por,fecha_creacion, fecha_vencimiento) 
+	VALUES (1,"fresa","pastel de fresa natural","Daniel Orozco",'2024/2/29','2024/3/27');
+
+
+insert into ingrediente(id,nombre,descripcion,fecha_ingreso,fecha_vencimiento) 
+	values(1,"canela","canela en polvo",'2024/2/20','2024/3/25');
+
