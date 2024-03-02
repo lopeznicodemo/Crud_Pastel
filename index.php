@@ -4,14 +4,14 @@
     include_once "model/conexion.php";
     $sentencia = $bd -> query("select * from pastel");
     $pastel = $sentencia->fetchAll(PDO::FETCH_OBJ);
-    //print_r($pastel);
+    
 ?>
 
 
 <div class="containter mt-5">
     <div class="row justify-content-center">
         <div class="col-md-7">
-            uno
+            <!-- primera tabla -->
             <!-- Inicio Alerta-->
             <?php 
                 if(isset($_GET['mensaje']) and $_GET['mensaje'] == 'falta'){
@@ -77,7 +77,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    lista de pasteles
+                    Lista de pasteles
                 </div>
                 <div class="p-4">
                     <div
@@ -124,7 +124,7 @@
             dos
             <div class="card">
                 <div class="card-header">
-                    Ingresar datos Pastel
+                    Registrar nuevo pastel
                 </div>
                 <form  class="p-4" method="POST" action="registrar.php">
                     <div class="mb-3">
